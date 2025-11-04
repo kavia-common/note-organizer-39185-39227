@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ClientShell from "./client-shell";
 
 export const metadata: Metadata = {
-  title: "Minimal Next.js App",
-  description: "Ultra-minimal Next.js application",
+  title: "Ocean Notes",
+  description: "A modern notes app with tags and search.",
 };
 
 export default function RootLayout({
@@ -13,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        {children}
+      <body className="app-shell" suppressHydrationWarning>
+        <ClientShell>{children}</ClientShell>
       </body>
     </html>
   );
